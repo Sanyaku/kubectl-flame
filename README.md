@@ -78,8 +78,16 @@ NodeJS support is based on [perf](https://perf.wiki.kernel.org/index.php/Main_Pa
 ## Contribute
 Please refer to [the contributing.md file](Contributing.md) for information about how to get involved. We welcome issues, questions, and pull requests.
 
+## Development
+TBD.  For now locally building multiarch with:
+
+```
+docker buildx build -f ./agent/docker/jvm/Dockerfile.alpine -t sumologic.com/kubectl-flame:latest .
+```
+
 ## Maintainers
 - Eden Federman: efederman@verizonmedia.com
 
 ## License
 This project is licensed under the terms of the [Apache 2.0](LICENSE-Apache-2.0) open source license. Please refer to [LICENSE](LICENSE) for the full terms.
+
