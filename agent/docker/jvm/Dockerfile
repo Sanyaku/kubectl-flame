@@ -2,7 +2,7 @@ FROM golang:1.14-buster as agentbuild
 WORKDIR /go/src/github.com/VerizonMedia/kubectl-flame
 ADD . /go/src/github.com/VerizonMedia/kubectl-flame
 RUN go get -d -v ./...
-RUN cd agent && go build -o /go/bin/agent
+RUN ls && cd agent && go build -o /go/bin/agent
 
 FROM openjdk:8 as asyncprofiler
 RUN echo deb http://deb.debian.org/debian stretch-backports main > /etc/apt/sources.list.d/stretch-backports.list && \
