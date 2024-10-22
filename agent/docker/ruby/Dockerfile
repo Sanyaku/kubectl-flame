@@ -9,7 +9,7 @@ WORKDIR /
 RUN git clone --depth 1 --branch v0.8.1 https://github.com/rbspy/rbspy
 RUN cd rbspy && cargo build --release
 
-FROM bitnami/minideb:stretch
+FROM bitnami/minideb:bookworm
 RUN mkdir /app
 COPY --from=agentbuild /go/bin/agent /app/agent
 COPY --from=rbspybuild /rbspy/target/release/rbspy /app/rbspy
