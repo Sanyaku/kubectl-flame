@@ -41,6 +41,7 @@ jobs:
     - name: Build Docker Image
       uses: docker/build-push-action@v6
       with:
+        push: true
         platforms: linux/amd64,linux/arm64
         file: ${{ matrix.image.dockerfile }}
         tags: sumologic/kubectl-flame:${{ steps.vars.outputs.tag }}-${{ matrix.image.tag }}
