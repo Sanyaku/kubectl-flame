@@ -41,6 +41,7 @@ jobs:
     - name: Build Docker Image
       uses: docker/build-push-action@v6
       with:
+        push: true
         platforms: linux/amd64,linux/arm64
         file: ${{ matrix.image.dockerfile }}
         tags: sumologic/kubectl-flame:${{ steps.vars.outputs.tag }}-${{ matrix.image.tag }}
@@ -58,7 +59,7 @@ jobs:
     - name: GoReleaser
       uses: goreleaser/goreleaser-action@v1
       with:
-        version: latest
+        version: v1.26.2
         args: release --clean
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
